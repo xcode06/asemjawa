@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!--
+========================================
+ Adult Niche Landing — Adsterra Adult + Monetag
+ High CPM: $5-$15 per 1000 visitors
+========================================
+-->
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="rating" content="adult" />
+  <meta name="RATING" content="RTA-5042-1996-1400-1577-RTA" />
+  <title>Exclusive 18+</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .wrap { max-width: 480px; margin: 0 auto; padding-bottom: 110px; position: relative; }
+
+    /* === Top bar === */
+    .topbar {
+      padding: 12px 16px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: linear-gradient(180deg, #2a0010 0%, #000 100%);
+    }
+    .brand { font-weight: 900; font-size: 16px; letter-spacing: 0.5px; }
+    .brand span { color: #ff1a5e; }
+    .age-pill {
+      background: #ff1a5e; color: #fff;
+      padding: 4px 10px; border-radius: 14px;
+      font-size: 11px; font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    /* === Video === */
+    .video-wrap {
+      position: relative; width: 100%;
+      aspect-ratio: 9/16; background: #000;
+    }
+    .live-video { width: 100%; height: 100%; object-fit: cover; }
+    .play-button {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 26, 94, 0.9);
+      border-radius: 50%; padding: 28px;
+      cursor: pointer; z-index: 3;
+      box-shadow: 0 0 36px rgba(255, 26, 94, 0.8);
+      border: none;
+    }
+    .play-button svg { width: 46px; height: 46px; fill: #fff; }
+    .play-button:hover { background: rgba(255, 80, 130, 0.95); }
+    .loader {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      border: 4px solid rgba(255,255,255,0.2);
+      border-top: 4px solid #ff1a5e;
+      border-radius: 50%; width: 50px; height: 50px;
+      animation: spin 1s linear infinite; display: none;
+    }
+    @keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+    /* === Headline === */
+    .headline { padding: 22px 16px 10px; text-align: center; }
+    .headline h1 {
+      font-size: 24px; font-weight: 900;
+      background: linear-gradient(90deg, #ff1a5e, #ff5078, #ff1a5e);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 6px;
+    }
+    .headline p { font-size: 12px; opacity: 0.75; }
+
+    /* === Ad slots === */
+    .ad-slot {
+      margin: 14px;
+      background: rgba(255, 26, 94, 0.04);
+      border: 1px dashed rgba(255, 26, 94, 0.3);
+      border-radius: 10px; padding: 8px;
+      min-height: 260px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ad-slot.large { min-height: 70px; }
+    .ad-slot .lbl {
+      display: block; font-size: 9px; color: #666;
+      margin-bottom: 4px; letter-spacing: 1.5px;
+    }
+    .ad-slot .placeholder { color: #555; font-size: 11px; }
+
+    /* === CTA === */
+    .cta-section { padding: 8px 16px 16px; }
+    .cta-title {
+      text-align: center; font-size: 13px;
+      color: #ff5078; margin-bottom: 12px;
+      letter-spacing: 0.5px; font-weight: 700;
+    }
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .cta-btn {
+      background: linear-gradient(135deg, #ff1a5e 0%, #b3003b 100%);
+      color: #fff; border: none;
+      border-radius: 12px; padding: 14px 10px;
+      font-size: 13px; font-weight: 700;
+      cursor: pointer; text-align: center;
+      box-shadow: 0 4px 14px rgba(255, 26, 94, 0.5);
+      transition: 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .cta-btn::after {
+      content: ''; position: absolute; top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: 0.6s;
+    }
+    .cta-btn:hover::after { left: 100%; }
+    .cta-btn:hover {
+      background: linear-gradient(135deg, #ff5078 0%, #ff1a5e 100%);
+      transform: translateY(-2px);
+    }
+    .cta-btn.wide {
+      grid-column: span 2;
+      background: linear-gradient(90deg, #ff1a5e, #b3003b, #ff1a5e);
+      background-size: 200% 100%;
+      animation: shimmer 2s linear infinite;
+      font-size: 15px; padding: 16px;
+    }
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+    .cta-btn.alt {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 80, 120, 0.4);
+    }
+    .cta-btn.alt:hover {
+      background: rgba(255, 80, 120, 0.15);
+      border-color: #ff5078;
+    }
+
+    /* === Stats === */
+    .stats {
+      padding: 20px 16px; margin: 14px;
+      background: rgba(255, 26, 94, 0.1);
+      border: 1px solid rgba(255, 26, 94, 0.3);
+      border-radius: 12px;
+    }
+    .stats-row { display: flex; justify-content: space-around; }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 22px; font-weight: 900; color: #ff5078; display: block; }
+    .stat-lbl { font-size: 10px; opacity: 0.7; text-transform: uppercase; }
+
+    /* === Floating CTA === */
+    .floating {
+      position: fixed; bottom: 64px; right: 16px;
+      z-index: 999; border: none;
+      background: linear-gradient(135deg, #ff1a5e, #b3003b);
+      color: #fff; border-radius: 50px;
+      padding: 14px 24px; font-size: 14px; font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 4px 24px rgba(255, 26, 94, 0.7);
+      animation: pulse-float 2s infinite;
+    }
+    @keyframes pulse-float {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    .footer-note {
+      text-align: center; padding: 16px 12px;
+      font-size: 10px; opacity: 0.5;
+      border-top: 1px solid rgba(255, 26, 94, 0.2);
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+<script>
+(function () {
+  function kill () {
+    document.documentElement.innerHTML = "";
+    document.open(); document.write(""); document.close();
+  }
+  const SIGNATURE = `
+========================================
+ Adult Niche Landing — Adsterra Adult + Monetag
+ High CPM: $5-$15 per 1000 visitors
+========================================
+`.trim();
+  const walker = document.createTreeWalker(document, NodeFilter.SHOW_COMMENT, null, false);
+  let found = false;
+  while (walker.nextNode()) {
+    if (walker.currentNode.nodeValue.trim() === SIGNATURE) { found = true; break; }
+  }
+  if (!found) kill();
+})();
+</script>
+
+<div class="wrap">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="brand">🔥 <span>EXCLUSIVE</span> 18+</div>
+    <div class="age-pill">18+ ONLY</div>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="video-wrap">
+    <video id="liveVideo" class="live-video"
+      src="https://ik.imagekit.io/bypiusb2h/video_360p.mp4"
+      muted loop playsinline preload="metadata"></video>
+    <button class="play-button" id="playButton" onclick="onPlayClick()">
+      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <div class="loader" id="loader"></div>
+  </div>
+
+  <!-- AD SLOT 1 (300x250) -->
+  <div class="ad-slot">
+    <div style="text-align:center">
+      <span class="lbl">ADVERTISEMENT — 18+</span>
+      <div class="placeholder" id="adSlot1">
+        <!-- 👉 Paste Adsterra Adult Banner 300x250 di sini -->
+        <span>300 x 250 AD SLOT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADLINE -->
+  <div class="headline">
+    <h1>🔞 Klik Play — Akses Penuh</h1>
+    <p>18+ Verified • HD Streaming • No Registration</p>
+  </div>
+
+  <!-- AD SLOT 2 (468x60) -->
+  <div class="ad-slot large">
+    <div style="text-align:center; width:100%">
+      <span class="lbl">ADVERTISEMENT — 18+</span>
+      <div class="placeholder" id="adSlot2">
+        <!-- 👉 Paste Adsterra Adult Banner 468x60 di sini -->
+        <span>468 x 60 AD SLOT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA GRID -->
+  <div class="cta-section">
+    <div class="cta-title">⚡ AKSES EKSKLUSIF — KLIK UNTUK MASUK ⚡</div>
+    <div class="cta-grid">
+      <button class="cta-btn wide" onclick="goAd()">🔥 WATCH FULL VIDEO</button>
+      <button class="cta-btn" onclick="goAd()">▶️ CONTINUE</button>
+      <button class="cta-btn" onclick="goAd()">💎 PREMIUM</button>
+      <button class="cta-btn" onclick="goAd()">🚪 ENTER</button>
+      <button class="cta-btn" onclick="goAd()">🔓 UNLOCK</button>
+      <button class="cta-btn" onclick="goAd()">🎬 STREAM HD</button>
+      <button class="cta-btn" onclick="goAd()">🔞 EXCLUSIVE</button>
+      <button class="cta-btn alt" onclick="goAd()">⭐ NEXT</button>
+    </div>
+  </div>
+
+  <!-- EXTRA AD SLOT (160x300) -->
+  <div class="ad-slot">
+    <div style="text-align:center">
+      <span class="lbl">ADVERTISEMENT — 18+</span>
+      <div class="placeholder" id="adSlot3">
+        <!-- 👉 Paste Adsterra Adult Banner 160x300 di sini -->
+        <span>160 x 300 AD SLOT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stats-row">
+      <div class="stat-item"><span class="stat-num" id="viewers">4.2K</span><span class="stat-lbl">Viewers</span></div>
+      <div class="stat-item"><span class="stat-num">HD</span><span class="stat-lbl">Quality</span></div>
+      <div class="stat-item"><span class="stat-num">24/7</span><span class="stat-lbl">Live</span></div>
+    </div>
+  </div>
+
+  <!-- EXTRA AD SLOT (160x600) -->
+  <div class="ad-slot">
+    <div style="text-align:center">
+      <span class="lbl">ADVERTISEMENT — 18+</span>
+      <div class="placeholder" id="adSlot4">
+        <!-- 👉 Paste Adsterra Adult Banner 160x600 di sini -->
+        <span>160 x 600 AD SLOT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    🔞 18+ ONLY • This site contains adult content • All performers are 18+
+    <br/>By entering you confirm you are of legal age in your country.
+  </div>
+
+  <!-- FLOATING CTA -->
+  <button class="floating" onclick="goAd()">🔞 ENTER</button>
+
+</div>
+
+<script>
+function onPlayClick () {
+  var v = document.getElementById('liveVideo');
+  var btn = document.getElementById('playButton');
+  var ld = document.getElementById('loader');
+  btn.style.display = 'none';
+  ld.style.display = 'block';
+
+  setTimeout(function () {
+    v.play().catch(function () {});
+    ld.style.display = 'none';
+    goAd();
+  }, 700);
+}
+
+setInterval(function () {
+  var n = 4000 + Math.floor(Math.random() * 600);
+  var el = document.getElementById('viewers');
+  if (el) el.textContent = (n / 1000).toFixed(1) + 'K';
+}, 4000);
+</script>
+
+<!-- ===================================================
+     📌 ADSTERRA + MONETAG INTEGRATION
+     =================================================== -->
+
+<!-- 1) ADSTERRA POPUNDER (Adult) -->
+<!-- <script src="https://www.profitabledisplaynetwork.com/popup.js?key=YOUR_KEY"></script> -->
+
+<!-- 2) ADSTERRA SOCIAL BAR (Adult) -->
+<!-- <script src="https://www.profitabledisplaynetwork.com/socialbar.js?key=YOUR_KEY"></script> -->
+
+<!-- 3) MONETAG POPUNDER (Adult) -->
+<!-- Login monetag.com → Ad Units → Popunder → Copy script -->
+<!-- <script src="https://monetag.com/..."></script> -->
+
+<!-- 4) MONETAG SMARTLINK (push notifications) -->
+<!-- Monetag → Smartlinks → Get code -->
+
+<!-- 5) BANNER 300x250 — Adult (Adsterra atau Monetag) -->
+<!-- Paste di <div id="adSlot1"> -->
+
+<!-- 6) BANNER 468x60 — Adult -->
+<!-- Paste di <div id="adSlot2"> -->
+
+<!-- 7) BANNER 160x300 — Adult -->
+<!-- Paste di <div id="adSlot3"> -->
+
+<!-- 8) BANNER 160x600 — Adult (highest CPM, sidebar-style) -->
+<!-- Paste di <div id="adSlot4"> -->
+
+<!-- 9) MOBILE STICKY 320x50 (Auto) -->
+<div id="mobile-banner-sticky" style="position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:center;background:rgba(0,0,0,0.95);padding:4px;z-index:998;">
+  <!-- 👉 Paste Adsterra/Monetag Banner 320x50 di sini -->
+</div>
+
+<script>
+/* ================================
+   AD LINK (Adsterra Adult main)
+   ================================ */
+var AD_LINK = "https://www.effectivecpmnetwork.com/yxkuhhqn?key=0f78e13d9d75b537e38e1597d1db88b7";
+
+/* VAST tag (kalau pakai In-Stream Video Ad) */
+var VAST_TAG = ""; // paste Adsterra VAST URL di sini
+
+(function () {
+  if (!AD_LINK || AD_LINK.includes("===")) {
+    window.goAd = function () {};
+    return;
+  }
+
+  // All clicks → Adsterra adult main
+  function goAd () {
+    window.open(AD_LINK, "_blank");
+  }
+  window.goAd = goAd;
+  window.GO_AD = goAd;
+})();
+</script>
+</body>
+</html>
